@@ -4,9 +4,4 @@ Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.0
 numpy==1.18.1
 pandas==1.0.3
-pickleshare==0.7.5
-requests==2.23.0
-tensorboard==2.1.1
 tensorflow==2.1.0
-tensorflow-estimator==2.1.0
-tf-estimator-nightly==1.14.0.dev2019080601
