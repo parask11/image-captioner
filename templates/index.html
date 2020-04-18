@@ -30,8 +30,8 @@
         color: darkred;
       }
 
-      .h-300 {
-        height: 300px;
+      .h-400 {
+        height: 400px;
       }
 
       .p-0 {
@@ -94,6 +94,12 @@
         outline: 0;
       }
 
+      .fitImage {
+        background-repeat: no-repeat;
+        object-fit: cover;
+        height: 200px;
+      }
+
       .footer {
         /* position: fixed; */
         left: 0;
@@ -113,7 +119,7 @@
 
     <!-- Try here block -->
     <div class="container">
-      <div class="row m-0 h-300">
+      <div class="row m-0 h-400">
         <div class="col-md-12 p-0">
           <!-- heading -->
           <h2 class="brown-text m-t-24">
@@ -160,7 +166,7 @@
 
           <div class="row">
             <div class="col-md-12">
-              <img src="{{your_result['image']}}" />
+              <img class="fitImage" src="{{your_result['image']}}" />
             </div>
             <div class="col-md-12">
               <h4 class="brown-text m-t-24">
