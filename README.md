@@ -6,7 +6,9 @@ For example:
 
 ![result1](/results/1.png)
 
-![result1](/results/3.png)
+![result2](/results/3.png)
+
+![result3](/results/4.png)
 
 ## File descriptions
 1) `app.py` Main code to run to create the server
