@@ -18,6 +18,16 @@ For example:
 7) `results` Contains samples of results on testing.
 8) `static` Stores images input by the user while generating captions.
 9) `templates` Contains the `<index.html>` to generate the UI.
+10) `preparing_data.ipynb` Jupyter Notebook to prepare the data for training.
+11) `training_model.ipynb` Jupyter Notebook to train the model.
+12) `generate_captions.ipynb`Jupyter Notebook to import all the essentials and generate the captions.
+
+## External Data
+1) `model_weights` Folder that contains all the models generated in 40 epochs during the training.(Link: `https://drive.google.com/open?id=1EzkEjTSQAAlKejyJAwRfKbKqBtDNHwv7`
+2) `glove.6B.50d.txt` Text file to contain mapping of words to their corresponding 50-dimensional vector. (Link:
+`https://drive.google.com/open?id=1mqHRTOyF87fHoiuRZwOlgcYwcCynQ5Ki`
+3) `encoding_train_features.pkl` Dictionary to map training images to their corresponding 2048 dimensional vector. (Link: `https://drive.google.com/open?id=1qO4fgm8qUu0eIslMpg6oqqmcZil5qs9k`
+4) `flickr30k_images` Training images and their captions. (Link: `https://www.kaggle.com/hsankesara/flickr-image-dataset`)
 
 ## Installation
 1) Clone the repository.
