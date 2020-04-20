@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IMAGE CAPTIONER</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        widows: 100%;
+        margin: 0;
+        background: #f4f4f4;
+      }
+
+      .brown-bg {
+        background: darkred;
+      }
+
+      .white-text {
+        color: white;
+      }
+
+      .brown-text {
+        color: darkred;
+      }
+
+      .h-400 {
+        height: 400px;
+      }
+
+      .p-0 {
+        padding: 0;
+      }
+
+      .m-t-24 {
+        margin-top: 24px;
+      }
+
+      .logo {
+        height: 40px;
+        width: 200px;
+        margin: 10px 0;
+      }
+
+      .align-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      #uploadIcon {
+        width: 30px;
+        height: 30px;
+      }
+
+      #uploadLabel {
+        color: #999999;
+        margin-left: 10px;
+      }
+
+      #fileUpload {
+        border: #e9ecef 2px solid;
+        width: 400px;
+        height: 100px;
+        cursor: pointer;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      #fileUpload:hover {
+        border: none;
+        box-shadow: inset 18px 18px 30px -20px rgba(1, 22, 56, 0.5),
+          inset -18px -18px 30px -16px #ffffff;
+      }
+
+      #uploadInput {
+        visibility: hidden;
+        opacity: 0;
+        height: 0.01em;
+        width: 0.01em;
+        top: 0;
+        left: 0;
+        position: absolute;
+        outline: 0;
+      }
+
+      .fitImage {
+        background-repeat: no-repeat;
+        object-fit: contain;
+        height: 200px;
+      }
+
+      .footer {
+        /* position: fixed; */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- logo -->
+    <div class="brown-bg">
+      <div class="container">
+        <img src="../static/logo.png" class="logo" alt="logo" />
+      </div>
+    </div>
+
+    <!-- Try here block -->
+    <div class="container">
+      <div class="row m-0 h-400">
+        <div class="col-md-12 p-0">
+          <!-- heading -->
+          <h2 class="brown-text m-t-24">
+            <strong>Try here</strong>
+          </h2>
+        </div>
+
+        <!-- upload and display section -->
+        <div class="col-md-6 align-center">
+          <form
+            class="form-inline"
+            method="POST"
+            action="/"
+            enctype="multipart/form-data"
+          >
+            <div id="fileUpload" onclick="upload()">
+              <!-- hidden input -->
+              <input
+                class="form-control"
+                id="uploadInput"
+                type="file"
+                name="userfile"
+              />
+
+              <!-- content inside the upload box -->
+              <img src="../static/upload.png" alt="" id="uploadIcon" />
+              <label id="uploadLabel" type="file" name="userfile"> Put your Image here</label>
+              {% if file_name %}
+                <p>{{file_name}}</p>
+              {% endif %}
+            </div>
+
+            <!-- submit button -->
+            <button
+              style="margin: 16px;"
+              type="submit"
+              class="btn brown-bg white-text"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+
+        <!-- Display Image and caption section -->
+        <div class="col-md-6 align-center">
+          {% if your_result %}
+
+          <div class="row">
+            <div class="col-md-12">
+              <img class="fitImage" src="{{your_result['image']}}" />
+            </div>
+            <div class="col-md-12">
+              <h4 class="brown-text m-t-24">
+                <strong>Generated Caption:</strong>
+              </h4>
+              <p><b> {{your_result['caption']}} </b></p>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- About me -->
+    <div class="container">
+      <h2 class="brown-text m-t-24">
+        <strong>Description</strong>
+      </h2>
+      <p>
+        Generate suitable captions for daily life images of people and animals.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <hr />
+      <p>
+        Copyright© 2020 Made with ❤️ by Paras Kaushik
+      </p>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+      function upload() {
+        document.querySelector("#uploadInput").click();
+      }
+    </script>
+  </body>
+</html>

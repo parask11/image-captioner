@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return render_template("index.html")
+    return render_template("index1.html")
 
 @app.route('/',methods=['POST'])
 def submit():
@@ -24,8 +24,8 @@ def submit():
             "image":path,
             'caption':caption
         }
-        #print(caption)
-    return render_template("index.html",your_result=result_dic)
+        print(caption)
+    return render_template("index1.html",your_result=result_dic, file_name=f.filename)
 
 if __name__=="__main__":
     app.debug = True

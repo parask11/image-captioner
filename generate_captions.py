@@ -2,7 +2,7 @@ import numpy as np
 import pickle
 from keras.applications.resnet50 import ResNet50, preprocess_input
 from keras.preprocessing import image
-from keras.models import Model
+from keras.models import Model, load_model
 from keras.preprocessing.sequence import pad_sequences
 from keras.layers import Input, Dense, Dropout, Embedding, LSTM
 from keras.layers.merge import add
@@ -75,33 +75,8 @@ model = Model(inputs=[input_img_features,input_captions],outputs=outputs)
 model.layers[2].set_weights([embedding_matrix])
 model.layers[2].trainable = False
 
-model.load_weights("model_weights/model_37.h5")
+model.load_weights("model_weights/model_29.h5")
 model._make_predict_function()
-
-
-# In[66]:
-
-
-#img_path = "/Users/paraskaushik/Desktop/FOOD/CODES/DATA_SCIENCE/Image Captioning Bot/8k/flickr8k/Flickr_Data/Flickr_Data/Images/"
-
-
-# In[67]:
-
-
-"""for i in range(15):
-    id = np.random.randint(0,1000)
-    all_image_names = list(os.listdir(img_path))
-    img_name = all_image_names[id]
-    photo_2048 = encode_img(img_path+img_name).reshape((1,2048))
-    #photo_2048 = encoding_train[img_name].reshape((1,2048))
-
-    i = plt.imread(img_path+img_name)
-    caption = predict_captions(photo_2048)
-    print(caption)
-
-    plt.imshow(i)
-    plt.axis("off")
-    plt.show()"""
 
 def give_caption(image_path):
     photo_2048 = encode_img(image_path).reshape((1,2048))
