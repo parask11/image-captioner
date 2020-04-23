@@ -1,8 +1,5 @@
 # Image Captioner
 
-## Deployed
-Check this link for functioning of the website: http://3f49124e.ngrok.io/
-
 ## Getting Started
 It will generate captions according to the given images.
 For example: 
