@@ -18,6 +18,10 @@
         background: #f4f4f4;
       }
 
+      .bold-text {
+        font-weight: bold;
+      }
+
       .brown-bg {
         background: darkred;
       }
@@ -157,10 +161,8 @@
             >
               Submit
             </button>
+            <p class="m-t-24" id="imageName"></p>
           </form>
-          {% if file_name %}
-          <p>{{file_name}}</p>
-          {% endif %}
         </div>
 
         <!-- Display Image and caption section -->
@@ -183,17 +185,13 @@
       </div>
     </div>
 
-    <!-- About me -->
+    <!-- Description -->
     <div class="container">
       <h2 class="brown-text m-t-24">
         <strong>Description</strong>
       </h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate odio
-        quibusdam nihil error eveniet laboriosam saepe quia quod. Consectetur
-        aliquam, autem veritatis sequi quisquam nihil dolore aliquid alias,
-        deserunt omnis aut dicta officia nostrum tenetur est itaque nobis
-        dolorum velit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Generates suitable captions for daily-life images of people and animals.
       </p>
     </div>
 
@@ -210,6 +208,11 @@
       function upload() {
         document.querySelector("#uploadInput").click();
       }
+      document.getElementById("uploadInput").onchange = function() {
+        document.getElementById("imageName").innerHTML =
+          "<span class='brown-text bold-text'>Document uploaded: </span>" +
+          this.value.slice(12);
+      };
     </script>
   </body>
 </html>

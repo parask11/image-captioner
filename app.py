@@ -25,7 +25,7 @@ def submit():
             'caption':caption
         }
         #print(caption)
-    return render_template("index.html",your_result=result_dic, file_name=f.filename)
+    return render_template("index.html",your_result=result_dic)
 
 if __name__=="__main__":
     app.debug = True
