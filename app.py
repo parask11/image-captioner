@@ -24,6 +24,8 @@ def submit():
             "image":path,
             'caption':caption
         }
+        print(caption)
+    return render_template("index.html",your_result=result_dic, file_name=f.filename)
         #print(caption)
     return render_template("index.html",your_result=result_dic)
 

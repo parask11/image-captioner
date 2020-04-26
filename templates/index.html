@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IMAGE CAPTIONING</title>
+    <title>IMAGE CAPTIONER</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -150,7 +150,12 @@
 
               <!-- content inside the upload box -->
               <img src="../static/upload.png" alt="" id="uploadIcon" />
-              <label id="uploadLabel"> Put your Image here</label>
+              <label id="uploadLabel" type="file" name="userfile">
+                Put your Image here</label
+              >
+              {% if file_name %}
+              <p>{{file_name}}</p>
+              {% endif %}
             </div>
 
             <!-- submit button -->
