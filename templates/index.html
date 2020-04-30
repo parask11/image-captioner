@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IMAGE CAPTIONER</title>
+    <title>IMAGE CAPTIONING</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -146,10 +146,7 @@
 
               <!-- content inside the upload box -->
               <img src="../static/upload.png" alt="" id="uploadIcon" />
-              <label id="uploadLabel" type="file" name="userfile"> Put your Image here</label>
-              {% if file_name %}
-                <p>{{file_name}}</p>
-              {% endif %}
+              <label id="uploadLabel"> Put your Image here</label>
             </div>
 
             <!-- submit button -->
@@ -161,6 +158,9 @@
               Submit
             </button>
           </form>
+          {% if file_name %}
+          <p>{{file_name}}</p>
+          {% endif %}
         </div>
 
         <!-- Display Image and caption section -->
@@ -189,7 +189,11 @@
         <strong>Description</strong>
       </h2>
       <p>
-        Generate suitable captions for daily life images of people and animals.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate odio
+        quibusdam nihil error eveniet laboriosam saepe quia quod. Consectetur
+        aliquam, autem veritatis sequi quisquam nihil dolore aliquid alias,
+        deserunt omnis aut dicta officia nostrum tenetur est itaque nobis
+        dolorum velit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       </p>
     </div>
 
