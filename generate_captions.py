@@ -7,7 +7,7 @@ from keras.preprocessing.sequence import pad_sequences
 from keras.layers import Input, Dense, Dropout, Embedding, LSTM
 from keras.layers.merge import add
 
-model = ResNet50(weights="imagenet",input_shape=(224,224,3))
+model = ResNet50(weights="imagenet",input_shape=(3,224,224))
 model_new = Model(input=model.input,output = model.layers[-2].output)
 model_new._make_predict_function()
 
