@@ -18,11 +18,16 @@
         background: #f4f4f4;
       }
 
+      .bold-text {
+        font-weight: bold;
+      }
+
       .brown-bg {
         background: darkred;
       }
 
-      .white-text {
+      .white-text,
+      .btn:hover {
         color: white;
       }
 
@@ -101,7 +106,7 @@
       }
 
       .footer {
-        /* position: fixed; */
+        position: inherit;
         left: 0;
         bottom: 0;
         width: 100%;
@@ -146,10 +151,9 @@
 
               <!-- content inside the upload box -->
               <img src="../static/upload.png" alt="" id="uploadIcon" />
-              <label id="uploadLabel" type="file" name="userfile"> Put your Image here</label>
-              {% if file_name %}
-                <p>{{file_name}}</p>
-              {% endif %}
+              <label id="uploadLabel" type="file" name="userfile">
+                Put your Image here</label
+              >
             </div>
 
             <!-- submit button -->
@@ -160,6 +164,7 @@
             >
               Submit
             </button>
+            <p class="m-t-24" id="imageName"></p>
           </form>
         </div>
 
@@ -183,14 +188,15 @@
       </div>
     </div>
 
-    <!-- About me -->
+    <!-- Description -->
     <div class="container">
       <h2 class="brown-text m-t-24">
         <strong>Description</strong>
       </h2>
       <p>
-        Generate suitable captions for daily life images of people and animals.
+        Generates suitable captions for daily-life images of people and animals.
       </p>
+      <br />
     </div>
 
     <!-- Footer -->
@@ -206,6 +212,11 @@
       function upload() {
         document.querySelector("#uploadInput").click();
       }
+      document.getElementById("uploadInput").onchange = function() {
+        document.getElementById("imageName").innerHTML =
+          "<span class='brown-text bold-text'>Document uploaded: </span>" +
+          this.value.slice(12);
+      };
     </script>
   </body>
 </html>
