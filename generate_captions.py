@@ -7,7 +7,8 @@ from keras.preprocessing.sequence import pad_sequences
 from keras.layers import Input, Dense, Dropout, Embedding, LSTM
 from keras.layers.merge import add
 
-model = ResNet50(weights="imagenet",input_shape=(224,224,3))
+
+model = ResNet50(weights="imagenet",input_shape=(3,224,224))
 model_new = Model(input=model.input,output = model.layers[-2].output)
 model_new._make_predict_function()
 
@@ -75,7 +76,11 @@ model = Model(inputs=[input_img_features,input_captions],outputs=outputs)
 model.layers[2].set_weights([embedding_matrix])
 model.layers[2].trainable = False
 
-model.load_weights("model_weights/model_29.h5")
+
+#model.load_weights("model_weights/model_29.h5")
+
+model.load_weights("model_37.h5")
+
 model._make_predict_function()
 
 def give_caption(image_path):
