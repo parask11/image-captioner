@@ -79,7 +79,7 @@ model = Model(inputs=[input_img_features, input_captions], outputs=outputs)
 model.layers[2].set_weights([embedding_matrix])
 model.layers[2].trainable = False
 
-model.load_weights("model_30.h5")
+model.load_weights("model_weights/model_30.h5")
 model._make_predict_function()
 
 # In[66]:

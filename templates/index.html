@@ -34,10 +34,10 @@
       .brown-text {
         color: darkred;
       }
-
+      /*
       .h-400 {
         height: 400px;
-      }
+      } */
 
       .p-0 {
         padding: 0;
@@ -124,7 +124,7 @@
 
     <!-- Try here block -->
     <div class="container">
-      <div class="row m-0 h-400">
+      <div class="row m-0 ">
         <div class="col-md-12 p-0">
           <!-- heading -->
           <h2 class="brown-text m-t-24">
@@ -176,13 +176,20 @@
             <div class="col-md-12">
               <img class="fitImage" src="{{your_result['image']}}" />
             </div>
+
             <div class="col-md-12">
               <h4 class="brown-text m-t-24">
                 <strong>Generated Caption:</strong>
               </h4>
               <p><b> {{your_result['caption1']}} </b></p>
             </div>
+            <div class="col-md-12 m-t-24">
+              <h6 class="brown-text">Alternative Captions:</h6>
+              <p class="m-0">{{your_result['caption2']}}</p>
+              <p>{{your_result['caption3']}}</p>
+            </div>
           </div>
+
           {% endif %}
         </div>
       </div>
@@ -190,13 +197,18 @@
 
     <!-- Description -->
     <div class="container">
-      <h2 class="brown-text m-t-24">
-        <strong>Description</strong>
-      </h2>
-      <p>
-        Generates suitable captions for daily-life images of people and animals.
-      </p>
-      <br />
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="brown-text m-t-24">
+            <strong>Description</strong>
+          </h2>
+          <p>
+            Generates suitable captions for daily-life images of people and
+            animals.
+          </p>
+          <br />
+        </div>
+      </div>
     </div>
 
     <!-- Footer -->
