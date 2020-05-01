@@ -23,7 +23,7 @@ For example:
 10) `preparing_data.ipynb` Jupyter Notebook to prepare the data for training.
 11) `training_model.ipynb` Jupyter Notebook to train the model.
 12) `generate_captions.ipynb`Jupyter Notebook to import all the essentials and generate the captions.
-13) `model_weights` Folder that contains all the models generated in 40 epochs during the training.
+13) `model_weights` Folder that contains the models number 28-40 generated in 40 epochs during the training. (Model below 28 were useless).
 
 ## External Data
 1) `glove.6B.50d.txt` Text file to contain mapping of words to their corresponding 50-dimensional vector. (Link:
