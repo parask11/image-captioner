@@ -8,7 +8,7 @@ For example:
 
 ![result2](/results/3.png)
 
-![result3](/results/4.png)
+![result3](/results/2.png)
 
 ## File descriptions
 1) `app.py` Main code to run to create the server
