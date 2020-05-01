@@ -45,7 +45,7 @@ def submit():
         print(caption1)
         print(caption2)
         print(caption3)
-    return render_template("index.html",your_result=result_dic)
+    return render_template("index.html", your_result=result_dic)
 
 if __name__=="__main__":
     app.debug = True
