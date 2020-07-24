@@ -1,7 +1,7 @@
 # Image Captioner
 
 ## Getting Started
-It will generate captions according to the given images.
+It generates captions according to the given images.
 For example: 
 
 ![result1](/results/1.png)
