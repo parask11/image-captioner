@@ -34,9 +34,13 @@ For example:
 ## Making virtual environment (Optional but recommended)
 1) Make the environment.
 `python -m venv captioner`
+  For any other name:
+ `python -m venv <name>`
 
 2) Activate the environment.
 `source captioner/bin/activate`
+  For any other name:
+`source <name>/bin/activate`
 
 ## Installation
 1) Clone the repository.
